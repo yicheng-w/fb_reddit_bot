@@ -15,7 +15,7 @@ if screenshotdir[-1] != "/":
 reddit_timeout = 15 # technically 2, but just to be safe
 last_reddit_request = 0
 
-reddit_base = "http://reddit.com/"
+reddit_base = "http://www.reddit.com/"
 
 images = ['png', 'jpg', 'jpeg', 'PNG', 'gif']
 
@@ -39,7 +39,9 @@ def get_reddit_thread(subreddit):
 
     last_reddit_request = ct
 
-    url = reddit_base + subreddit
+    url = reddit_base + "r/" + subreddit
+
+    print url
 
     #print "accessing reddit"
     reddit_page = BeautifulSoup(requests.get(url).text, 'html.parser')
@@ -56,7 +58,7 @@ def get_reddit_thread(subreddit):
             else:
                 reddit_links.append(link.get('data-href-url'))
 
-    #print reddit_links
+    print reddit_links
 
     if len(reddit_links) > 0:
         to_ret = random.choice(reddit_links)
