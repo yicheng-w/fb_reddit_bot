@@ -109,13 +109,14 @@ class ChatBot(fbchat.Client):
             elif message == "send screenshot":
                 self.sendLocalImage(other_id, image=get_most_recent_screenshot())
             elif str(other_id) in activated_list.keys():
-                print "REQUESTING REDDIT"
-                url = get_reddit_thread(activated_list[str(other_id)])
-                if url and url[-3:] in images:
-                    self.sendRemoteImage(other_id, message="oh also this:",
-                            image=url)
-                else:
-                    self.send(other_id, url)
+                if (random.randrange(0, 10) == 0):
+                    print "REQUESTING REDDIT"
+                    url = get_reddit_thread(activated_list[str(other_id)])
+                    if url and url[-3:] in images:
+                        self.sendRemoteImage(other_id, message="oh also this:",
+                                image=url)
+                    else:
+                        self.send(other_id, url)
 
                     #elif (str(author_id) != str(self.uid)):
         #    self.send(author_id, "Message received")
