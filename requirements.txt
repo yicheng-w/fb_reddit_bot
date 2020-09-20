@@ -60,7 +60,7 @@ h5py==2.6.0
 hickle==2.1.0
 html5lib==0.999999999
 HTMLParser==0.0.2
-httplib2==0.9.1
+httplib2==0.18.0
 httptools==0.0.9
 humanize==2.4.0
 idna==2.8
