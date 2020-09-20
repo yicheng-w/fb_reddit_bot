@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import traceback
 import sys
 import time
+import os
 
 email = raw_input("email: ")
 passwd = raw_input("passwd: ")
@@ -89,14 +90,14 @@ class ChatBot(fbchat.Client):
         #if (str(author_id) == saujas_fb_id):
             #    self.send(author_id, random.choice(motivational_quotes))
         elif (str(author_id) in activated_list.keys()):
-            #if (random.randrange(0, 20) == 0):
-            print "REQUESTING REDDIT"
-            url = get_reddit_thread(activated_list[str(author_id)])
-            if url and url[-3:] in images:
-                self.sendRemoteImage(author_id, message="oh also this:",
-                        image=url)
-            else:
-                self.send(author_id, url)
+            if (random.randrange(0, 20) == 0):
+                print "REQUESTING REDDIT"
+                url = get_reddit_thread(activated_list[str(author_id)])
+                if url and url[-3:] in images:
+                    self.sendRemoteImage(author_id, message="oh also this:",
+                            image=url)
+                else:
+                    self.send(author_id, url)
 
         elif (str(author_id) == str(self.uid)):
             if message[:8] == "activate":
@@ -109,7 +110,7 @@ class ChatBot(fbchat.Client):
             elif message == "send screenshot":
                 self.sendLocalImage(other_id, image=get_most_recent_screenshot())
             elif str(other_id) in activated_list.keys():
-                if (random.randrange(0, 10) == 0):
+                if (random.randrange(0, 20) == 0):
                     print "REQUESTING REDDIT"
                     url = get_reddit_thread(activated_list[str(other_id)])
                     if url and url[-3:] in images:

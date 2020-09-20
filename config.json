@@ -1,0 +1,25 @@
+{
+    "chats": ["2151364391633711", "2356521841137542", "100002493558853"],
+    "allow_list": [
+        {
+            "domain": "youtube.com",
+            "allowed_params": [ "v", "t" ]
+        },
+        {
+            "domain": "youtu.be",
+            "allowed_params": [ "t" ]
+        },
+        {
+            "domain": "twitter.com",
+            "allowed_params": [ "s" ]
+        },
+        {
+            "domain": "lmgtfy.com",
+            "allowed_params": [ "q" ]
+        },
+        {
+            "domain": "docs.google.com",
+            "allowed_params": [ "usp" ]
+        }
+    ]
+}
