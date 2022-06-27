@@ -168,7 +168,7 @@ PyYAML==3.11
 pyzmq==17.1.2
 qtconsole==4.3.1
 regex==2017.4.5
-reportlab==3.3.0
+reportlab==3.5.55
 requests==2.21.0
 requests-html==0.6.6
 revtok==0.0.1
