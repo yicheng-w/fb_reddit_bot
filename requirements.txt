@@ -174,7 +174,7 @@ requests-html==0.6.6
 revtok==0.0.1
 rtv==1.15.0
 s3transfer==0.3.3
-Sanic==0.1.9
+Sanic==20.12.7
 scikit-learn==0.19.0
 scipy==0.19.1
 screen-resolution-extra==0.0.0
